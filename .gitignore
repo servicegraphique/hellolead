@@ -1,0 +1,5 @@
+# Generated standalone page exports
+/exports-pages/
+/pages-hellolead.zip
+__pycache__/
+*.py[cod]
