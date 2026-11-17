@@ -200,6 +200,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" id="elementor-gallery-css" href="./wp-content/plugins/elementor/assets/lib/e-gallery/css/e-gallery.min.css?ver=1.2.0" media="all">
 <link rel="stylesheet" id="e-animations-css" href="./wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.6.1" media="all">
 
+<style>
+/* Encadré partenaire sous le bandeau d’accueil. */
+.closieur-partner { background: #f1f7fd; padding: 24px 20px 54px; }
+.closieur-partner__card { max-width: 1140px; margin: 0 auto; padding: 36px 46px; display: flex; align-items: center; gap: 44px; background: #fff; border-radius: 20px; box-shadow: 0 12px 35px rgba(30, 103, 199, .10); font-family: Poppins, sans-serif; }
+.closieur-partner__brand { flex: 0 0 210px; align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: 14px; padding-right: 36px; border-right: 1px solid #e5edf6; }
+.closieur-partner__eyebrow { color: #0867f9; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.closieur-partner__logo { display: flex; align-items: center; gap: 6px; color: #171824; font-size: 32px; line-height: 1; font-weight: 700; letter-spacing: -1.8px; }
+.closieur-partner__logo svg { width: 30px; height: 34px; flex: none; }
+.closieur-partner__content { flex: 1 1 auto; min-width: 0; }
+.closieur-partner__content h2 { margin: 0 0 10px; color: #191b21; font-family: inherit; font-size: 25px; font-weight: 700; line-height: 1.2; }
+.closieur-partner__content p { margin: 0; color: #303039; font-size: 15px; line-height: 1.65; }
+.closieur-partner__button, .closieur-partner__button:visited { flex: 0 0 auto; display: inline-block; padding: 17px 28px; border-radius: 999px; background: #0966ef; color: #fff; font-size: 11px; font-weight: 700; text-align: center; text-decoration: none; text-transform: uppercase; transition: background .2s; }
+.closieur-partner__button:hover, .closieur-partner__button:focus-visible { background: #0051c8; color: #fff; }
+.closieur-partner__button:focus-visible { outline: 3px solid #172f5a; outline-offset: 3px; }
+@media (max-width: 1024px) { .closieur-partner__card { gap: 26px; padding: 30px; } .closieur-partner__brand { flex-basis: 170px; padding-right: 24px; } .closieur-partner__content h2 { font-size: 21px; } }
+@media (max-width: 767px) { .closieur-partner { padding: 20px 20px 40px; } .closieur-partner__card { align-items: flex-start; flex-direction: column; gap: 22px; padding: 28px; } .closieur-partner__brand { flex-basis: auto; align-self: stretch; padding: 0 0 20px; border-right: 0; border-bottom: 1px solid #e5edf6; } .closieur-partner__content h2 { font-size: 22px; } .closieur-partner__button { width: 100%; } }
+</style>
 </head>
 <body class="home wp-singular page-template page-template-elementor_canvas page page-id-2462 wp-theme-hello-elementor elementor-default elementor-template-canvas elementor-kit-6 elementor-page elementor-page-2462">
 	<!-- Google Tag Manager (noscript) -->
@@ -456,6 +473,22 @@ Grâce à l’achat de leads qualifiés
 		</div>
 							</div>
 		</section>
+        <section class="closieur-partner" aria-labelledby="closieur-partner-title">
+            <div class="closieur-partner__card">
+                <div class="closieur-partner__brand">
+                    <span class="closieur-partner__eyebrow">Notre partenaire</span>
+                    <div class="closieur-partner__logo" aria-label="Closieur">
+                        <svg viewBox="0 0 30 34" aria-hidden="true" focusable="false"><path fill="#366bff" d="M2 19h5v12H2zM10 11h5v20h-5zM18 3h5v28h-5z" transform="skewX(-12) translate(4 0)"/><circle cx="25" cy="4" r="2" fill="#366bff"/></svg>
+                        <span>closieur</span>
+                    </div>
+                </div>
+                <div class="closieur-partner__content">
+                    <h2 id="closieur-partner-title">Des commerciaux indépendants pour appeler vos leads</h2>
+                    <p>Closieur vous présente des commerciaux indépendants, payés au résultat, qui appellent vos leads, prennent les rendez-vous et concluent la vente. Une force commerciale, sans recruter.</p>
+                </div>
+                <a class="closieur-partner__button" href="https://closieur.fr/?utm_source=hellolead.pro&amp;utm_medium=partenaire&amp;utm_campaign=module-accueil" target="_blank" rel="noopener noreferrer">Découvrir Closieur</a>
+            </div>
+        </section>
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-1eb691bd elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1eb691bd" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;gradient&quot;,&quot;jet_parallax_layout_list&quot;:[]}">
 						<div class="elementor-container elementor-column-gap-default">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-36482816" data-id="36482816" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
