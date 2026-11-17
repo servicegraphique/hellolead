@@ -11,6 +11,11 @@ SPEC.loader.exec_module(export)
 
 
 class ExportTests(unittest.TestCase):
+    def test_page_names_resolve_collisions(self):
+        pages = [Path('index.html'), Path('accueil/index.html'), Path('accueil-2/index.html')]
+        names = list(export.page_names(pages))
+        self.assertEqual([name for _, name in names], ['accueil', 'accueil-2', 'accueil-2-2'])
+
     def test_export_every_page_without_recaptcha(self):
         with tempfile.TemporaryDirectory() as directory:
             for page in export.PAGES:

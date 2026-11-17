@@ -12,7 +12,7 @@ Le dossier `exports-pages/` et l'archive `pages-hellolead.zip` sont générés �
 python3 tools/export_pages.py --output mon-export --zip mon-export.zip
 ```
 
-Chaque page contient `index.html`, `css/`, `js/`, `img/` et `vendor/` (ressources Elementor et autres bibliothèques, dont les chemins restent préservés). Un fichier `RESSOURCES-MANQUANTES.txt` signale les fichiers locaux non trouvés ; l'image `Process-block-1140-×-500-px-1.png` est absente du dépôt pour les deux versions de l'accueil.
+Chaque page contient `index.html`, `css/`, `js/`, `img/` et `vendor/` (ressources Elementor et autres bibliothèques, dont les chemins restent préservés). Si plusieurs pages ont le même nom, leurs dossiers sont distingués par un suffixe numérique ; `PAGE-SOURCE.txt` indique le chemin de la page d'origine. Un fichier `RESSOURCES-MANQUANTES.txt` signale les fichiers locaux non trouvés ; l'image `Process-block-1140-×-500-px-1.png` est absente du dépôt pour les deux versions de l'accueil.
 
 Pour consulter une page : placez-vous dans son dossier et lancez `python3 -m http.server 8000` (Windows : `py -m http.server 8000`), puis ouvrez `http://localhost:8000/`. Les liens vers les autres pages du site pointent vers le site public afin de ne pas dépendre des dossiers voisins. Certains services et polices restent externes.
 

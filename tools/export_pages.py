@@ -213,11 +213,26 @@ def export_one(source, out):
         else:
             shutil.copyfile(ROOT / path, dest)
     (out / 'index.html').write_text(html, encoding='utf-8')
+    (out / 'PAGE-SOURCE.txt').write_text(source.as_posix() + '\n', encoding='utf-8')
     (out / 'css/local.css').write_text(CSS, encoding='utf-8')
     (out / 'js/local.js').write_text(JS, encoding='utf-8')
     (out / 'LISEZ-MOI.txt').write_text(README, encoding='utf-8')
     (out / 'RESSOURCES-MANQUANTES.txt').write_text('\n'.join(sorted(missing)) + ('\n' if missing else 'Aucune ressource locale manquante détectée.\n'), encoding='utf-8')
     return missing
+
+
+def page_names(pages):
+    """Give each page a distinct folder, even when source names collide."""
+    used = set()
+    for page in pages:
+        base = 'accueil' if page == Path('index.html') else '-'.join(page.parent.parts)
+        name = base
+        suffix = 2
+        while name in used:
+            name = f'{base}-{suffix}'
+            suffix += 1
+        used.add(name)
+        yield page, name
 
 
 def main():
@@ -229,8 +244,7 @@ def main():
         parser.error('La sortie existe déjà ; choisissez un nouveau chemin pour ne rien écraser.')
     args.output.mkdir(parents=True)
     all_missing = {}
-    for page in PAGES:
-        name = 'accueil' if page == Path('index.html') else '-'.join(page.parent.parts)
+    for page, name in page_names(PAGES):
         all_missing[name] = sorted(export_one(page, args.output / name))
         print(f'{name}: {len(all_missing[name])} ressource(s) manquante(s)')
     with ZipFile(args.zip, 'w', ZIP_DEFLATED, compresslevel=6) as archive:
